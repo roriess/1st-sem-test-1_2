@@ -19,3 +19,17 @@ def modulo11_checksum(isbn_number: str):
 
     checksum = total + check_digit
     return checksum % 11 == 0
+
+
+while True:
+    user_input = input("Enter an ISBN10 number or '-1' to exit: ")
+   
+    if user_input == "-1": break
+    
+    try:
+        if modulo11_checksum(user_input):
+            print("correct")
+        else:
+            print("incorrect")
+    except Exception as ex:
+        print(f"An error occurred: {ex}")
