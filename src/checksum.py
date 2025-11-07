@@ -5,6 +5,9 @@ def modulo11_checksum(isbn_number: str):
         if char.isdigit():
             digits += char
 
+    if len(digits) != 10: 
+        raise ValueError('ISBN must have exactly 10 characters')
+
     check_digit = digits[-1]
 
     total = 0
@@ -15,12 +18,3 @@ def modulo11_checksum(isbn_number: str):
 
     checksum = total + check_digit
     return checksum % 11 == 0
-
-
-number = str(input())
-
-while number != -1:
-    result = "correct" if modulo11_checksum(number) == 1 else "incorrect"
-    print(result)
-
-    number = str(input())
