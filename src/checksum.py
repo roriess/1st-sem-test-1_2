@@ -1,5 +1,4 @@
 def modulo11_checksum(isbn_number: str):
-
     digits = ''
     for char in isbn_number:
         if char.isdigit():
@@ -10,13 +9,13 @@ def modulo11_checksum(isbn_number: str):
     
     int_digits = [int(x) for x in digits[:-1]]
 
-    check_digit = digits[-1]
+    check_digit = int(digits[-1])
 
     total = 0
-    for i in range(len(digits) - 1):
-        weight = 10
-        digit = digits[i]
-        total += digit * weight
+    weight = 10
+    for i in int_digits:
+        total += i * weight
+        weight -= 1
 
     checksum = total + check_digit
     return checksum % 11 == 0
