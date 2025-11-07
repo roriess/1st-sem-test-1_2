@@ -15,3 +15,11 @@ def test_short_string():
 
 def test_long_string():
     assert not modulo11_checksum("2-266-21132312332316-3")
+
+
+def test_empty_string():
+    assert not modulo11_checksum("")
+
+
+def test_none_input():
+    assert not modulo11_checksum(None)
