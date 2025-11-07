@@ -7,6 +7,8 @@ def modulo11_checksum(isbn_number: str):
 
     if len(digits) != 10: 
         raise ValueError('ISBN must have exactly 10 characters')
+    
+    int_digits = [int(x) for x in digits[:-1]]
 
     check_digit = digits[-1]
 
