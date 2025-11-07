@@ -12,6 +12,6 @@ def bin_search(xs: list[int], x: int):
             left = mid + 1
 
         else:
-            right = mid - 1
+            right = mid
 
     return left if left < len(xs) and xs[left] == x else -1 
