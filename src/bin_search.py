@@ -1,6 +1,6 @@
 def bin_search(xs: list[int], x: int):
     left = 0
-    right = len(xs) - 1
+    right = len(xs)
 
     while left < right:
         mid = (left + right) // 2
